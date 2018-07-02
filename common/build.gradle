@@ -11,3 +11,8 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+task rungame(dependsOn: 'classes', type: JavaExec) {
+  main = 'game.TowerDefenseGame'
+  classpath = sourceSets.main.runtimeClasspath
+}
