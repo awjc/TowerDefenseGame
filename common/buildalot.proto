@@ -1,0 +1,43 @@
+
+
+
+
+// A plot of land, which may be empty or have a building on it
+message Plot {
+    // The id (0 indexed) of the plot on the map, starting in the upper
+    // left and moving to the right, and so on.
+    int32 plot_id = 1;
+
+    // The building that's built on this plot, if any. Null means empty plot.
+    Building building = 2;
+
+    // The neighborhood appeal of this plot. This is affected by what's
+    // built on plots immediately to the left and right.
+    int32 appeal = 3;
+}
+
+
+message Building {
+    oneof {
+        Housing housing = 1;
+        Power power = 2;
+        Utility utility = 3;
+        Shop shop = 4;
+    }
+}
+
+message Housing {
+
+}
+
+message Power {
+
+}
+
+message Utility {
+
+}
+
+message Shop {
+
+}
