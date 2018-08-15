@@ -11,5 +11,14 @@ repositories {
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.11'
+
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+    compile group: 'com.google.guava', name: 'guava', version: '25.0-jre'
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+task rungame(dependsOn: 'classes', type: JavaExec) {
+    main = 'game.TowerDefenseGame'
+    classpath = sourceSets.main.runtimeClasspath
 }
